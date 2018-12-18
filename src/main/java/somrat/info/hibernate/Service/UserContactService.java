@@ -30,8 +30,8 @@ public class UserContactService {
         UserLogs userLogs2 = new UserLogs();
         userLogs2.setLog("Hi Viewers");
 
-        users.setName("Shanto").setSalary(10000).setTeamName("Team")
-                .setUserLogsList(Arrays.asList(userLogs, userLogs2));
+        users.setName("Shanto").setSalary(10000).setTeamName("Team");
+//                .setUserLogsList(Arrays.asList(userLogs, userLogs2));
 
         userContactRepository.save(userContacts.setUsers(users));
         return userContactRepository.findAll();

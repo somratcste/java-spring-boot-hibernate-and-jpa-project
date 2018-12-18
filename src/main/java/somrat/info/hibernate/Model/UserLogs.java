@@ -14,19 +14,21 @@ public class UserLogs {
 
     private String log;
 
-    @Column(name = "user_id")
-    private Integer userId;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    private Users users;
+
+    public Users getUsers() {
+        return users;
+    }
+
+    public UserLogs setUsers(Users users) {
+        this.users = users;
+        return this;
+    }
 
     public UserLogs() {
 
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
     }
 
     public UserLogs(String log) {

@@ -16,18 +16,6 @@ public class Users {
     @Column(name = "team_name")
     private String teamName;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
-    private List<UserLogs> userLogsList;
-
-    public List<UserLogs> getUserLogsList() {
-        return userLogsList;
-    }
-
-    public void setUserLogsList(List<UserLogs> userLogsList) {
-        this.userLogsList = userLogsList;
-    }
-
     public Users() {
 
     }
