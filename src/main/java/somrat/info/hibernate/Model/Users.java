@@ -1,6 +1,7 @@
 package somrat.info.hibernate.Model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users", catalog = "hibernate_app")
@@ -8,11 +9,24 @@ public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
     private Integer id;
     private String name;
     private Integer salary;
     @Column(name = "team_name")
     private String teamName;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    private List<UserLogs> userLogsList;
+
+    public List<UserLogs> getUserLogsList() {
+        return userLogsList;
+    }
+
+    public void setUserLogsList(List<UserLogs> userLogsList) {
+        this.userLogsList = userLogsList;
+    }
 
     public Users() {
 
