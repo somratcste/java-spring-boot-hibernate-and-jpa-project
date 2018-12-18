@@ -14,7 +14,7 @@ public class UserContacts {
     private Integer phoneNo;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id", referencedColumnName = "id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private Users users;
 
     public UserContacts() {
